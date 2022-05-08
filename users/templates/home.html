@@ -11,27 +11,35 @@
     </script>
     <h1>Home page</h1>
     <hr>
+    <div class="mx-auto">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><p  onclick="soundClick('q.mp3')" class="px-4 text-black">Q</p></li> <li><p  class="px-2 text-black">W</p></li>
-            <li><p  class="px-4 text-black">E</p></li> <li><p  class="px-2 text-black">R</p></li>
-            <li><p  class="px-4 text-black">T</p></li> <li><p  class="px-2 text-black">Y</p></li>
-            <li><p  class="px-4 text-black">U</p></li> <li><p  class="px-2 text-black">I</p></li>
-            <li><p  class="px-4 text-black">O</p></li> <li><p  class="px-2 text-black">P</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/q.mp3' %}')" class="px-4 text-black">Q</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/w.mp3' %}')" class="px-2 text-black">W</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/e.mp3' %}')" class="px-4 text-black">E</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/r.mp3' %}')" class="px-2 text-black">R</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/t.mp3' %}')" class="px-4 text-black">T</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/y.mp3' %}')" class="px-2 text-black">Y</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/u.mp3' %}')" class="px-4 text-black">U</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/i.mp3' %}')" class="px-2 text-black">I</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/o.mp3' %}')" class="px-4 text-black">O</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/p.mp3' %}')" class="px-2 text-black">P</p></li>
         </ul>
       </div>
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><p  class="px-4 text-black">A</p></li> <li><p  class="px-2 text-black">S</p></li>
-            <li><p  class="px-4 text-black">D</p></li> <li><p  class="px-2 text-black">F</p></li>
-            <li><p  class="px-4 text-black">G</p></li> <li><p  class="px-2 text-black">H</p></li>
-            <li><p  class="px-4 text-black">J</p></li> <li><p  class="px-2 text-black">K</p></li>
-            <li><p  class="px-4 text-black">L</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/a.mp3' %}')" class="px-4 text-black">A</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/s.mp3' %}')" class="px-2 text-black">S</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/d.mp3' %}')" class="px-4 text-black">D</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/f.mp3' %}')" class="px-2 text-black">F</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/g.mp3' %}')" class="px-4 text-black">G</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/h.mp3' %}')" class="px-2 text-black">H</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/j.mp3' %}')" class="px-4 text-black">J</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/k.mp3' %}')" class="px-2 text-black">K</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/l.mp3' %}')" class="px-4 text-black">L</p></li>
         </ul>
       </div>
-
-
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><p  onclick="soundClick('{% static 'users/mp3/z.mp3' %}')" class="px-4 text-black">Z</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/x.mp3' %}')" class="px-2 text-black">X</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/c.mp3' %}')" class="px-4 text-black">C</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/v.mp3' %}')" class="px-2 text-black">V</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/b.mp3' %}')" class="px-4 text-black">B</p></li> <li><p  onclick="soundClick('{% static 'users/mp3/n.mp3' %}')" class="px-2 text-black">N</p></li>
+            <li><p  onclick="soundClick('{% static 'users/mp3/m.mp3' %}')" class="px-4 text-black">M</p></li>
+        </ul>
+      </div>
+    </div>
     </div>
 
 {% endblock %}
