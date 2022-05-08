@@ -5,6 +5,10 @@ from django.shortcuts import render, redirect
 from users.forms import UserCreationForm
 
 
+def about(request):
+    return render(request, 'about.html')
+
+
 class Register(View):
     template_name = 'registration/register.html'
 
