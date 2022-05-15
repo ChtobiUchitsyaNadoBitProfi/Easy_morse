@@ -13,6 +13,9 @@
             <li><p id="sound-volume"> </p></li>
         </ul>
       </div>
+
+
+
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             {% for i in eng1 %}
@@ -34,6 +37,13 @@
             {% endfor %}
         </ul>
       </div>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Eng
+        </button>
+
+        <div class="collapse" id="collapseExample">
+           <p>Test</p>
+        </div>
     </div>
     <script type="text/javascript">
         var volume = 0.5
@@ -51,6 +61,17 @@
           audio.volume = volume;
           audio.autoplay = true; // Автоматически запускаем
         }
+
+        const button = document.body.querySelector('[data-target="#collapseExample"]');
+        button.addEventListener('click', function() {
+
+          if(button.innerText.toLowerCase() === 'ru') {
+            button.innerText = 'Eng';
+          }
+          else {
+            button.innerText = 'Ru';
+          }
+        });
     </script>
 
 {% endblock %}

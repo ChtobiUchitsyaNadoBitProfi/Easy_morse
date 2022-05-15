@@ -10,11 +10,13 @@ def about(request):
 
 
 def home(request):
-    # eng_clickboard = {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'}
     context = {
         "eng1": ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
         "eng2": ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
         "eng3": ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
+        "ru1": ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х'],
+        "ru2": ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э'],
+        "ru3": ['я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю'],
     }
     return render(request, 'home.html', context)
 
