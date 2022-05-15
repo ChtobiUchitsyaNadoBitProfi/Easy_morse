@@ -9,6 +9,16 @@ def about(request):
     return render(request, 'about.html')
 
 
+def home(request):
+    # eng_clickboard = {'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'}
+    context = {
+        "eng1": ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+        "eng2": ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+        "eng3": ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
+    }
+    return render(request, 'home.html', context)
+
+
 class Register(View):
     template_name = 'registration/register.html'
 
