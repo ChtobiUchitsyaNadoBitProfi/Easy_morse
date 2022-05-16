@@ -10,6 +10,10 @@ def about(request):
 
 
 def home(request):
+    return render(request, 'home.html')
+
+
+def clickboard(request):
     context = {
         "eng1": ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
         "eng2": ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
@@ -18,7 +22,7 @@ def home(request):
         "ru2": ['ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж', 'э'],
         "ru3": ['я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю'],
     }
-    return render(request, 'home.html', context)
+    return render(request, 'clickboard.html', context)
 
 
 class Register(View):
