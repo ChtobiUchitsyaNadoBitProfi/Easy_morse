@@ -25,6 +25,17 @@ def clickboard(request):
     return render(request, 'clickboard.html', context)
 
 
+def radiogramm(request):
+    context = {
+        "eng": ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x',
+                'c', 'v', 'b', 'n', 'm'],
+
+        "ru": ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж',
+               'э', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю'],
+    }
+    return render(request, 'radiogramm.html', context)
+
+
 class Register(View):
     template_name = 'registration/register.html'
 
