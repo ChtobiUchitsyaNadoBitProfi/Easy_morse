@@ -13,8 +13,14 @@
 
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><input id="range" min="0" max="100" step="10" value="50" type="range"></li>
+            <li><input id="volume-range" min="0" max="100" step="10" value="50" type="range"></li>
             <li><p id="sound-volume"> </p></li>
+        </ul>
+      </div>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><input id="speed-range" min="10" max="200" step="10" value="100" type="range"></li>
+            <li><p id="sound-speed"> </p></li>
         </ul>
       </div>
 
@@ -49,31 +55,39 @@
         </div>
     </div>
     <script type="text/javascript">
-        var volume = 0.5
+        var volume = 0.5;
+        var speed = 1;
         document.getElementById("sound-volume").innerHTML = volume;
+        document.getElementById("sound-speed").innerHTML = speed;
 
-        var range = document.getElementById('range');
-            range.onchange = function(){
-              volume = this.value / 100
-              document.getElementById("sound-volume").innerHTML = volume;
+        var volumeRange = document.getElementById('volume-range');
+            volumeRange.onchange = function(){
+                volume = this.value / 100
+                document.getElementById("sound-volume").innerHTML = volume;
+            }
+
+        var speedRange = document.getElementById('speed-range');
+            speedRange.onchange = function(){
+                speed = this.value / 100
+                document.getElementById("sound-speed").innerHTML = speed;
             }
 
         function soundClick(sound_source) {
-          var audio = new Audio(); // Создаём новый элемент Audio
-          audio.src = sound_source; // Указываем путь к звуку "клика"
-          audio.volume = volume;
-          audio.autoplay = true; // Автоматически запускаем
+            var audio = new Audio();
+            audio.src = sound_source;
+            audio.volume = volume;
+            audio.playbackRate = speed;
+            audio.autoplay = true;
         }
 
         const button = document.body.querySelector('[data-target="#collapseExample"]');
-        button.addEventListener('click', function() {
 
-          if(button.innerText.toLowerCase() === 'ru') {
-            button.innerText = 'Eng';
-          }
-          else {
-            button.innerText = 'Ru';
-          }
+        button.addEventListener('click', function() {
+            if(button.innerText.toLowerCase() === 'ru') {
+                button.innerText = 'Eng';
+            } else {
+                button.innerText = 'Ru';
+            }
         });
     </script>
 
