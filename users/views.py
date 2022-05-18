@@ -1,6 +1,7 @@
 from django.contrib.auth import authenticate, login
 from django.views import View
 from django.shortcuts import render, redirect
+from random import randint
 
 from users.forms import UserCreationForm
 
@@ -26,11 +27,18 @@ def clickboard(request):
 
 
 def radiogram(request):
+    engalp = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x',
+              'c', 'v', 'b', 'n', 'm']
+    rualp = ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж',
+             'э', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю']
+    rdgrm = []
+    for i in range(50):
+        rdgrm.append(engalp[randint(0, 25)])
+
     context = {
-        "eng": ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x',
-                'c', 'v', 'b', 'n', 'm'],
-        "ru": ['й', 'ц', 'у', 'к', 'е', 'н', 'г', 'ш', 'щ', 'з', 'х', 'ф', 'ы', 'в', 'а', 'п', 'р', 'о', 'л', 'д', 'ж',
-               'э', 'я', 'ч', 'с', 'м', 'и', 'т', 'ь', 'б', 'ю'],
+        "eng": engalp,
+        "ru": rualp,
+        "rdgrm": rdgrm,
     }
     return render(request, 'radiogram.html', context)
 

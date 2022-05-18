@@ -6,19 +6,80 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Radiogramm</h1>
+    <h1>Radiogram</h1>
     <hr>
     <div class="mx-auto">
     <div class="container">
 
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><p>Volume</p></li>
             <li><input id="volume-range" min="0" max="100" step="10" value="50" type="range"></li>
             <li><p id="sound-volume"> </p></li>
         </ul>
       </div>
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><p>Speed</p></li>
+            <li><input id="speed-range" min="10" max="200" step="10" value="100" type="range"></li>
+            <li><p id="sound-speed"> </p></li>
+        </ul>
+      </div>
+
+        <ul class="nav col-lg-auto me-lg-auto justify-content-center mb-md-0">
+            {% for i in rdgrm %}
+            <li><p onclick="soundClick('{% static 'users/mp3/'|add:i|add:'.mp3' %}')" class="px-4 text-black" >{{ i }}</p></li>
+            {% endfor %}
+        </ul>
+
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Play
+        </button>
 
     </div>
     </div>
+    <script type="text/javascript">
+        var volume = 0.5;
+        var speed = 1;
+        let elements = document.getElementsByClassName('px-4 text-black');
+        let form = document.getElementsByName('my-form')[0];
+
+        document.getElementById("sound-volume").innerHTML = volume;
+        document.getElementById("sound-speed").innerHTML = speed;
+
+        var volumeRange = document.getElementById('volume-range');
+            volumeRange.onchange = function(){
+                volume = this.value / 100
+                document.getElementById("sound-volume").innerHTML = volume;
+            }
+
+        var speedRange = document.getElementById('speed-range');
+            speedRange.onchange = function(){
+                speed = this.value / 100
+                document.getElementById("sound-speed").innerHTML = speed;
+            }
+
+        function soundClick(sound_source) {
+            var audio = new Audio();
+            audio.src = sound_source;
+            audio.volume = volume;
+            audio.playbackRate = speed;
+            audio.autoplay = true;
+        }
+
+        const button = document.body.querySelector('[data-target="#collapseExample"]');
+
+        function waitForElement(){
+            setTimeout(waitForElement, 250);
+        }
+
+        button.addEventListener('click', function() {
+            for (let elem of elements) {
+                elem.click();
+                setTimeout(() => console.log('dsflsdlf'), 1000);
+                console.log(elem);
+            }
+        });
+    </script>
 
 {% endblock %}
